@@ -1,5 +1,6 @@
 
-
+import Home from './Home';
+import './index.css';
 import Navbar from './Navbar';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
 
       <div className="content">
 
-        <h1>Ayham Al-Akhali</h1>
+      <Home/>
       </div>
 \
     </div>
