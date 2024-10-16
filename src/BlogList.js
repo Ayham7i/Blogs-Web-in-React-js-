@@ -1,4 +1,4 @@
-const BlogList = ({blogs , title}) => {
+const BlogList = ({blogs , title , handdleDelete}) => {
     return ( 
 
         <div className="BlogList">
@@ -9,6 +9,14 @@ const BlogList = ({blogs , title}) => {
                <div className="blog-preview" key={blog.id}>
                <h2>{blog.title}</h2>
                <p>Written by {blog.author}</p>
+
+               <button onClick={()=>handdleDelete(blog.id)} style={{
+                color:"white",
+                backgroundColor:"#f1356d",
+                padding:"3px 9px",
+                borderRadius:"5px",
+                marginTop:"15px"
+               }}>Delete Blog</button>
 
                </div>
 

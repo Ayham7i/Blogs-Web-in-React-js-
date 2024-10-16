@@ -10,12 +10,18 @@ const Home = () => {
         {title:"The AI" , body:"Ai will role the world and Ayham will same the world" , author:"Ayham Alakhali",id:3},
     ]);
 
+    const handdleDelete = (id)=>{
+        const newBlogs = blogs.filter(blog=>blog.id !==id)
+        setBlogs(newBlogs)
+
+    }
+
 
 
     return ( 
         <div className="home">
 
-            <BlogList blogs = {blogs} title = "All Blogs"  / >
+            <BlogList blogs = {blogs} title = "All Blogs" handdleDelete = {handdleDelete} / >
             <BlogList blogs = {blogs.filter((blog)=>blog.author === "Ayham Alakhali")} title = "Ayham's Blogs"  / >
      
         </div>
