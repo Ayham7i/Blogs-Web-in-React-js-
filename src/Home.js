@@ -10,6 +10,8 @@ const Home = () => {
         {title:"The AI" , body:"Ai will role the world and Ayham will same the world" , author:"Ayham Alakhali",id:3},
     ]);
 
+    const [name,setName]= useState("Ayham")
+
     const handdleDelete = (id)=>{
         const newBlogs = blogs.filter(blog=>blog.id !==id)
         setBlogs(newBlogs)
@@ -18,7 +20,8 @@ const Home = () => {
 
     useEffect(()=>{
         console.log("Run useEffect")
-    })
+        console.log(name)
+    },[name])
 
 
 
@@ -27,6 +30,8 @@ const Home = () => {
 
             <BlogList blogs = {blogs} title = "All Blogs" handdleDelete = {handdleDelete} / >
             <BlogList blogs = {blogs.filter((blog)=>blog.author === "Ayham Alakhali")} title = "Ayham's Blogs"  / >
+                <button onClick={()=>setName("Ayham Al-Akhali")}>Change Name</button>
+                <p>{name}</p>
      
         </div>
         
